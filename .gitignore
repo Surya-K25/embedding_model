@@ -1,0 +1,4 @@
+/data/
+/env/
+/src/__pycache__/
+*.md

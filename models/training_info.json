@@ -1,0 +1,12 @@
+{
+  "vector_size": 128,
+  "window": 5,
+  "min_count": 5,
+  "negative": 10,
+  "epochs": 10,
+  "sg": 1,
+  "hs": 0,
+  "vocab_size": 11896,
+  "training_time_seconds": 493.81177258491516,
+  "training_sentences": 17006
+}

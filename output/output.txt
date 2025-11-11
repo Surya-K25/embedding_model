@@ -1,0 +1,164 @@
+Model saved to models\word2vec_skipgram.model
+Word vectors saved to models\word2vec_vectors.kv
+Training info saved to models\training_info.json
+
+Model vocabulary size: 11896
+Sample words: ['the', 'of', 'and', 'one', 'in', 'a', 'to', 'zero', 'nine', 'is', 'two', 's', 'as', 'eight', 'for', 'five', 'by', 'three', 'was', 'that', 'four', 'on', 'six', 'seven', 'with', 'or', 'it', 'an', 'are', 'from']
+
+======================================================================
+SIMILARITY TESTS
+======================================================================
+
+Similarity Scores:
+Word 1          Word 2          Expected             Score
+----------------------------------------------------------------------
+king            queen           HIGH - royalty       0.6242
+man             woman           HIGH - gender        0.5850
+good            better          HIGH - comparative   0.5040
+walk            walking         HIGH - verb forms    0.6181
+king            man             MEDIUM - gender-royalty 0.3519
+good            bad             MEDIUM - antonyms    0.6399
+king            computer        LOW - unrelated      0.1230
+happy           tree            LOW - unrelated      0.2730
+
+======================================================================
+ANALOGY TESTS
+======================================================================
+
+Analogy Solving Results:
+
+Gender-Royalty:
+  man:king :: woman:? (expected: queen)
+  ✓ Correct! Top predictions:
+      1. child                (similarity: 0.5871)
+    ★ 2. queen                (similarity: 0.5601)
+      3. regent               (similarity: 0.5516)
+      4. princess             (similarity: 0.5510)
+      5. throne               (similarity: 0.5422)
+
+Gender-Royalty Reverse:
+  man:woman :: king:? (expected: queen)
+  ✓ Correct! Top predictions:
+      1. child                (similarity: 0.5871)
+    ★ 2. queen                (similarity: 0.5601)
+      3. regent               (similarity: 0.5516)
+      4. princess             (similarity: 0.5510)
+      5. throne               (similarity: 0.5422)
+
+Past Tense:
+  walk:walked :: talk:? (expected: talked)
+  ✗ Cannot solve: ['walked'] not in vocabulary
+
+Comparative:
+  good:better :: bad:? (expected: worse)
+  ✓ Correct! Top predictions:
+    ★ 1. worse                (similarity: 0.5086)
+      2. saf                  (similarity: 0.4824)
+      3. faster               (similarity: 0.4817)
+      4. larger               (similarity: 0.4774)
+      5. lighter              (similarity: 0.4653)
+
+Country-Capital:
+  france:paris :: england:? (expected: london)
+  ✓ Correct! Top predictions:
+    ★ 1. london               (similarity: 0.7016)
+      2. edinburgh            (similarity: 0.6152)
+      3. manchester           (similarity: 0.5982)
+      4. york                 (similarity: 0.5769)
+      5. scotland             (similarity: 0.5689)
+
+Comparative Size:
+  big:bigger :: small:? (expected: smaller)
+  ✗ Cannot solve: ['bigger'] not in vocabulary
+
+──────────────────────────────────────────────────────────────────────
+Analogy Accuracy: 4/4 = 100.0%
+
+======================================================================
+K-NEAREST NEIGHBORS
+======================================================================
+
+Most similar to 'king':
+  1. iii                  0.6727
+  2. prince               0.6653
+  3. crowned              0.6566
+  4. kings                0.6462
+  5. vii                  0.6295
+  6. queen                0.6242
+  7. regent               0.6184
+  8. henry                0.6002
+
+Most similar to 'computer':
+  1. computers            0.7425
+  2. hardware             0.7155
+  3. computing            0.6819
+  4. software             0.6480
+  5. networking           0.6471
+  6. graphics             0.6416
+  7. console              0.6320
+  8. technology           0.6317
+
+Most similar to 'happy':
+  1. quiet                0.5858
+  2. love                 0.5779
+  3. good                 0.5666
+  4. beautiful            0.5595
+  5. loved                0.5590
+  6. girl                 0.5567
+  7. angry                0.5329
+  8. pleasant             0.5272
+
+Most similar to 'one':
+  1. seven                0.9624
+  2. eight                0.9566
+  3. six                  0.9502
+  4. four                 0.9495
+  5. five                 0.9400
+  6. nine                 0.9370
+  7. three                0.9368
+  8. two                  0.9135
+
+Most similar to 'big':
+  1. bang                 0.5995
+  2. ger                  0.5786
+  3. nicknamed            0.4890
+  4. baby                 0.4888
+  5. boy                  0.4877
+  6. blue                 0.4796
+  7. joe                  0.4756
+  8. wolf                 0.4681
+
+Most similar to 'red':
+  1. yellow               0.6679
+  2. blue                 0.6648
+  3. white                0.6485
+  4. green                0.6037
+  5. black                0.5932
+  6. purple               0.5748
+  7. colored              0.5661
+  8. cres                 0.5488
+
+
+======================================================================
+ SAVING RESULTS SUMMARY
+======================================================================
+Results summary saved to output\results_summary.json
+
+======================================================================
+ PIPELINE COMPLETED
+======================================================================
+Total execution time: 567.70 seconds (9.5 minutes)
+
+Outputs saved to:
+  - models/          (trained model and tokenizer)
+  - output/          (visualizations and results)
+  - data/            (corpus and tokenized data)
+ PIPELINE COMPLETED
+======================================================================
+Total execution time: 567.70 seconds (9.5 minutes)
+
+Outputs saved to:
+  - models/          (trained model and tokenizer)
+  - output/          (visualizations and results)
+ PIPELINE COMPLETED
+======================================================================
