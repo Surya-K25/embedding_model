@@ -1,0 +1,246 @@
+======================================================================
+TRAINING WORD EMBEDDINGS
+======================================================================
+Loading corpus...
+  Using subset: first 10,000,000 characters
+Corpus size: 10000000 characters, ~1706282 words
+
+Training BPE tokenizer...
+Training BPE with 4744 merges...
+  Completed 500/4744 merges
+  Completed 1000/4744 merges
+  Completed 1500/4744 merges
+  Completed 2000/4744 merges
+  Completed 2500/4744 merges
+  Completed 3000/4744 merges
+  Completed 3500/4744 merges
+  Completed 4000/4744 merges
+  Completed 4500/4744 merges
+Vocabulary size: 48194
+Number of merge rules: 4744
+Tokenizer saved to models/tokenizer.pkl
+
+Tokenizing corpus...
+Number of tokens: 1878413
+
+Initializing Skip-gram model...
+  Vocabulary size: 48194
+  Embedding dimension: 100
+  Window size: 5
+  Negative samples: 5
+Negative sampling distribution prepared
+
+Generating training pairs...
+Number of training pairs: 11268238
+
+Starting training for 3 epochs...
+
+============================================================
+Epoch 1/3
+============================================================
+  Batch 1000/5503 | Loss: 3.1499 | LR: 0.023487
+  Batch 2000/5503 | Loss: 2.9165 | LR: 0.021973
+  Batch 3000/5503 | Loss: 2.8036 | LR: 0.020459
+  Batch 4000/5503 | Loss: 2.7308 | LR: 0.018944
+  Batch 5000/5503 | Loss: 2.6770 | LR: 0.017430
+  Batch 5503/5503 | Loss: 2.6545 | LR: 0.016668
+
+Epoch 1 completed in 203.2s
+Average loss: 2.6545
+Embeddings saved to models/embeddings_epoch1.npy
+
+============================================================
+Epoch 2/3
+============================================================
+  Batch 1000/5503 | Loss: 2.3902 | LR: 0.015154
+  Batch 2000/5503 | Loss: 2.3781 | LR: 0.013640
+  Batch 3000/5503 | Loss: 2.3675 | LR: 0.012125
+  Batch 4000/5503 | Loss: 2.3589 | LR: 0.010611
+  Batch 5000/5503 | Loss: 2.3516 | LR: 0.009097
+  Batch 5503/5503 | Loss: 2.3483 | LR: 0.008335
+
+Epoch 2 completed in 181.5s
+Average loss: 2.3483
+Embeddings saved to models/embeddings_epoch2.npy
+
+============================================================
+Epoch 3/3
+============================================================
+  Batch 1000/5503 | Loss: 2.2920 | LR: 0.006821
+  Batch 2000/5503 | Loss: 2.2898 | LR: 0.005306
+  Batch 3000/5503 | Loss: 2.2874 | LR: 0.003792
+  Batch 4000/5503 | Loss: 2.2854 | LR: 0.002278
+  Batch 5000/5503 | Loss: 2.2835 | LR: 0.000763
+  Batch 5503/5503 | Loss: 2.2826 | LR: 0.000100
+
+Epoch 3 completed in 236.9s
+Average loss: 2.2826
+Embeddings saved to models/embeddings_epoch3.npy
+
+============================================================
+Training completed!
+============================================================
+Embeddings saved to models/embeddings.npy
+
+======================================================================
+EVALUATING WORD EMBEDDINGS
+======================================================================
+
+Loading tokenizer and embeddings...
+Tokenizer loaded from models/tokenizer.pkl
+Embeddings shape: (48194, 100)
+
+======================================================================
+WORD EMBEDDING EVALUATION
+======================================================================
+
+1. SIMILARITY TESTS
+----------------------------------------------------------------------
+  similarity('apple', 'banana') = 0.2588
+  similarity('apple', 'potato') = 0.4183
+  similarity('apple', 'orange') = 0.4288
+  similarity('king', 'queen') = 0.8278
+  similarity('man', 'woman') = 0.7618
+  similarity('run', 'walk') = 0.7330
+  similarity('good', 'bad') = 0.8250
+
+2. NEAREST NEIGHBORS
+----------------------------------------------------------------------
+
+  Top 10 words similar to 'apple':
+     1. macintosh       (similarity: 0.8819)
+     2. iic             (similarity: 0.8662)
+     3. iie             (similarity: 0.8578)
+     4. mac             (similarity: 0.8174)
+     5. plus            (similarity: 0.8147)
+     6. newton          (similarity: 0.8093)
+     7. igs             (similarity: 0.7957)
+     8. ibm             (similarity: 0.7942)
+     9. amiga           (similarity: 0.7866)
+    10. software        (similarity: 0.7858)
+
+  Top 10 words similar to 'banana':
+     1. ana             (similarity: 0.9579)
+     2. engelm          (similarity: 0.9372)
+     3. magu            (similarity: 0.9172)
+     4. guilla          (similarity: 0.9169)
+     5. mari            (similarity: 0.9168)
+     6. tii             (similarity: 0.9124)
+     7. acantha         (similarity: 0.9123)
+     8. potrerana       (similarity: 0.9101)
+     9. manni           (similarity: 0.9085)
+    10. rupicola        (similarity: 0.9081)
+
+  Top 10 words similar to 'king':
+     1. emperor         (similarity: 0.8388)
+     2. prince          (similarity: 0.8339)
+     3. afonso          (similarity: 0.8334)
+     4. queen           (similarity: 0.8278)
+     5. alexius         (similarity: 0.8083)
+     6. kings           (similarity: 0.8065)
+     7. macedon         (similarity: 0.8049)
+     8. iv              (similarity: 0.7996)
+     9. ruler           (similarity: 0.7995)
+    10. byzantine       (similarity: 0.7936)
+
+  Top 10 words similar to 'queen':
+     1. chancellor      (similarity: 0.8975)
+     2. prince          (similarity: 0.8954)
+     3. trebi           (similarity: 0.8826)
+     4. zond            (similarity: 0.8814)
+     5. ruler           (similarity: 0.8744)
+     6. knights         (similarity: 0.8714)
+     7. aragon          (similarity: 0.8649)
+     8. defeats         (similarity: 0.8636)
+     9. prussia         (similarity: 0.8616)
+    10. queror          (similarity: 0.8595)
+
+  Top 10 words similar to 'run':
+     1. running         (similarity: 0.8453)
+     2. touch           (similarity: 0.8386)
+     3. moving          (similarity: 0.8353)
+     4. teleg           (similarity: 0.8329)
+     5. purchase        (similarity: 0.8256)
+     6. console         (similarity: 0.8218)
+     7. planned         (similarity: 0.8178)
+     8. hit             (similarity: 0.8171)
+     9. slot            (similarity: 0.8129)
+    10. cable           (similarity: 0.8105)
+
+  Top 10 words similar to 'walk':
+     1. concentrate     (similarity: 0.9302)
+     2. manage          (similarity: 0.9282)
+     3. navigate        (similarity: 0.9272)
+     4. strive          (similarity: 0.9224)
+     5. deliver         (similarity: 0.9223)
+     6. backup          (similarity: 0.9218)
+     7. check           (similarity: 0.9207)
+     8. needless        (similarity: 0.9205)
+     9. quarantined     (similarity: 0.9202)
+    10. cooperate       (similarity: 0.9196)
+
+3. ANALOGY TESTS
+----------------------------------------------------------------------
+
+  man:king::woman:?
+    Expected: queen
+    Predictions:
+        1. emperor         (score: 0.8100)
+        2. afonso          (score: 0.7783)
+        3. heir            (score: 0.7765)
+        4. alexius         (score: 0.7742)
+        5. reign           (score: 0.7649)
+    Expected answer not in top 5
+
+  man:woman::king:?
+    Expected: queen
+    Predictions:
+        1. emperor         (score: 0.8100)
+        2. afonso          (score: 0.7783)
+        3. heir            (score: 0.7765)
+        4. alexius         (score: 0.7742)
+        5. reign           (score: 0.7649)
+    Expected answer not in top 5
+
+  big:bigger::small:?
+    Expected: smaller
+    Predictions:
+        1. fertile         (score: 0.8276)
+        2. sects           (score: 0.7935)
+        3. farming         (score: 0.7918)
+        4. vast            (score: 0.7883)
+        5. albatrosses     (score: 0.7846)
+    Expected answer not in top 5
+
+  good:best::bad:?
+    Expected: worst
+    Predictions:
+        1. outstanding     (score: 0.7368)
+        2. awards          (score: 0.7358)
+        3. picture         (score: 0.7284)
+        4. film            (score: 0.7207)
+        5. achievement     (score: 0.7168)
+    Expected answer not in top 5
+
+  walk:walking::run:?
+    Expected: running
+    Predictions:
+        1. console         (score: 0.8225)
+        2. platinum        (score: 0.8152)
+        3. slots           (score: 0.8127)
+        4. portable        (score: 0.8117)
+        5. terminal        (score: 0.8095)
+    Expected answer not in top 5
+
+  Accuracy: 0/5 (0.0%)
+
+4. VALIDATION CHECKS
+----------------------------------------------------------------------
+  ✓ similarity('apple', 'banana') [0.2588] > similarity('apple', 'potato') [0.4183]: False
+  ✗ analogy('man', 'king', 'woman') contains 'queen': False
+
+======================================================================
+
+======================================================================
+COMPLETED!
+======================================================================

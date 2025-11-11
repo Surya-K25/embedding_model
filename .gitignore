@@ -1,4 +1,40 @@
+# Data files
 /data/
+text8*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environment
 /env/
-/src/__pycache__/
-*.md
+/venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Models
+/models/
+*.npy
+*.pkl
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Logs
+*.log
