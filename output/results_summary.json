@@ -6,56 +6,56 @@
     "negative": 10,
     "epochs": 10,
     "vocab_size": 11896,
-    "training_time_seconds": 493.81177258491516
+    "training_time_seconds": 522.5202674865723
   },
   "similarity_tests": [
     {
       "word1": "king",
       "word2": "queen",
       "expected": "HIGH - royalty",
-      "similarity": 0.6241507530212402
+      "similarity": 0.6392895579338074
     },
     {
       "word1": "man",
       "word2": "woman",
       "expected": "HIGH - gender",
-      "similarity": 0.5849910378456116
+      "similarity": 0.592585563659668
     },
     {
       "word1": "good",
       "word2": "better",
       "expected": "HIGH - comparative",
-      "similarity": 0.504014253616333
+      "similarity": 0.5094780325889587
     },
     {
       "word1": "walk",
       "word2": "walking",
       "expected": "HIGH - verb forms",
-      "similarity": 0.6181440353393555
+      "similarity": 0.6107701063156128
     },
     {
       "word1": "king",
       "word2": "man",
       "expected": "MEDIUM - gender-royalty",
-      "similarity": 0.35193008184432983
+      "similarity": 0.3318037986755371
     },
     {
       "word1": "good",
       "word2": "bad",
       "expected": "MEDIUM - antonyms",
-      "similarity": 0.6399486064910889
+      "similarity": 0.6287131309509277
     },
     {
       "word1": "king",
       "word2": "computer",
       "expected": "LOW - unrelated",
-      "similarity": 0.12299151718616486
+      "similarity": 0.1017068400979042
     },
     {
       "word1": "happy",
       "word2": "tree",
       "expected": "LOW - unrelated",
-      "similarity": 0.2729520797729492
+      "similarity": 0.29604652523994446
     }
   ]
 }

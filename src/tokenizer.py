@@ -51,7 +51,7 @@ class BPETokenizer:
             vocab_size=self.vocab_size,
             special_tokens=["<UNK>", "<PAD>", "<BOS>", "<EOS>"],
             show_progress=True,
-            min_frequency=5  # Minimum frequency for tokens
+            min_frequency=2  # Minimum frequency for tokens
         )
         
         # Train on corpus

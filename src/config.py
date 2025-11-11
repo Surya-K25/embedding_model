@@ -6,15 +6,15 @@ TEXT8_URL = "http://mattmahoney.net/dc/text8.zip"
 CORPUS_CHUNK_SIZE = 1000  # Words per line in preprocessed corpus
 
 # Tokenization Configuration
-VOCAB_SIZE = 12000  # BPE vocabulary size (10K-15K range)
-MIN_TOKEN_FREQUENCY = 5  # Minimum frequency for tokens
+VOCAB_SIZE = 20000  # BPE vocabulary size (10K-15K range)
+MIN_TOKEN_FREQUENCY = 2  # Minimum frequency for tokens
 
 # Model Configuration
-VECTOR_SIZE = 128  # Embedding dimensions (100-150 range)
+VECTOR_SIZE = 200  # Embedding dimensions (100-150 range)
 WINDOW_SIZE = 5  # Context window size
-MIN_WORD_COUNT = 5  # Minimum word frequency
+MIN_WORD_COUNT = 2  # Minimum word frequency
 NEGATIVE_SAMPLES = 10  # Negative sampling (5-10 range)
-TRAINING_EPOCHS = 10  # Training epochs (5-10 range)
+TRAINING_EPOCHS = 15  # Training epochs (5-10 range)
 USE_SKIPGRAM = 1  # 1 for Skip-gram, 0 for CBOW
 USE_HIERARCHICAL_SOFTMAX = 0  # 0 for negative sampling, 1 for hierarchical softmax
 
