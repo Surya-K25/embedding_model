@@ -1,0 +1,7 @@
+INCREASE vocab DATASET
+INCREASE VECTOR size
+INCREASE EPOCHS and store the data after each epoch
+make .model and .kv
+store each token's id after embedding
+fix query's dimensions without losing context
+take two user queries and find out similarity (cosine similarity) 
